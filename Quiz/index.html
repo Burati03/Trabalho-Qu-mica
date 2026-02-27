@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚗️ pH Quiz · Ácidos, Bases e Indicadores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Barra visual de pH -->
+        <div class="ph-bar">
+            <div class="ph-segment acid">0-3 <span>Ácido</span></div>
+            <div class="ph-segment acid">4-5 <span>Ác. fraco</span></div>
+            <div class="ph-segment neutral">6-7 <span>Neutro</span></div>
+            <div class="ph-segment alkaline">8-9 <span>Base fraca</span></div>
+            <div class="ph-segment alkaline">10-14 <span>Base</span></div>
+        </div>
+
+        <h1>
+            <span>🧪</span> pH Quiz <span>⚗️</span>
+        </h1>
+        <div class="subhead">ácidos • bases • indicadores</div>
+
+        <!-- Cartão principal do quiz -->
+        <div class="question-card" id="questionCard">
+            <div class="question-number" id="questionNumber">Questão 1/10</div>
+            <div class="question-text" id="questionText">Carregando...</div>
+            
+            <div class="options" id="optionsContainer"></div>
+
+            <!-- Feedback e botões de navegação -->
+            <div class="feedback" id="feedbackMessage"></div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn prev-btn" id="prevBtn" disabled>← Anterior</button>
+                <div class="progress" id="progressIndicator">1/10</div>
+                <button class="nav-btn next-btn" id="nextBtn">Próxima →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
