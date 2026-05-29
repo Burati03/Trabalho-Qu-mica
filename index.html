@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⚗️ Química Quiz · Ácidos, Bases e Indicadores de pH</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- Botão da música -->
+    <button id="musicBtn" class="music-btn">
+        🎵 Música
+    </button>
+
     <div class="quiz-container">
-        <!-- Barra visual de pH -->
+
+        <!-- Barra de pH -->
         <div class="ph-bar">
             <div class="ph-segment acid">0-3 <span>Ácido</span></div>
             <div class="ph-segment acid">4-5 <span>Ác. fraco</span></div>
@@ -18,28 +27,66 @@
         </div>
 
         <h1>
-            <span>🧪</span> pH Quiz <span>⚗️</span>
+            <span>🧪</span>
+            pH Quiz
+            <span>⚗️</span>
         </h1>
-        <div class="subhead">ácidos • bases • indicadores</div>
 
-        <!-- Cartão principal do quiz -->
+        <div class="subhead">
+            ácidos • bases • indicadores
+        </div>
+
+        <!-- Card -->
         <div class="question-card" id="questionCard">
-            <div class="question-number" id="questionNumber">Questão 1/10</div>
-            <div class="question-text" id="questionText">Carregando...</div>
-            
+
+            <div class="question-number" id="questionNumber">
+                Questão 1/10
+            </div>
+
+            <div class="question-text" id="questionText">
+                Carregando...
+            </div>
+
             <div class="options" id="optionsContainer"></div>
 
-            <!-- Feedback e botões de navegação -->
-            <div class="feedback" id="feedbackMessage"></div>
-            
+            <div class="feedback" id="feedbackMessage">
+                Selecione uma alternativa.
+            </div>
+
             <div class="nav-buttons">
-                <button class="nav-btn prev-btn" id="prevBtn" disabled>← Anterior</button>
-                <div class="progress" id="progressIndicator">1/10</div>
-                <button class="nav-btn next-btn" id="nextBtn">Próxima →</button>
+
+                <button class="nav-btn prev-btn" id="prevBtn" disabled>
+                    ← Anterior
+                </button>
+
+                <div class="progress" id="progressIndicator">
+                    1/10
+                </div>
+
+                <button class="nav-btn next-btn" id="nextBtn">
+                    Próxima →
+                </button>
+
             </div>
         </div>
     </div>
 
+    <!-- Música principal -->
+    <audio id="bgMusic" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Som correto -->
+    <audio id="correctSound">
+        <source src="correct.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Som errado -->
+    <audio id="wrongSound">
+        <source src="wrong.mp3" type="audio/mpeg">
+    </audio>
+
     <script src="script.js"></script>
+
 </body>
 </html>
