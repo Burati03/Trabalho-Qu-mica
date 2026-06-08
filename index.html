@@ -1,52 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>LabMaster: Academia de pH | Jogo Educativo de Química</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LAB pH MASTER Advanced</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="game-container" id="gameRoot">
-    <div class="lab-header">
-        <div style="font-weight:bold; font-size:1.5rem;">🧪 LABMASTER: pH & INDICADORES</div>
-        <div class="score-area">
-            <span>🔬 Pontos: <span id="pointsDisplay">0</span></span>
-            <div class="stars-area" id="starsDisplay">
-                <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span>
-            </div>
-        </div>
-    </div>
-    <div class="lab-main">
-        <div class="experiment-panel">
-            <div class="bench">
-                <div class="beaker-area">
-                    <div class="tube">
-                        <div class="liquid" id="liquidBeaker">
-                            <div class="liquid-fill" id="liquidFill"></div>
-                        </div>
-                        <div style="margin-top: 8px;">🧪 Solução</div>
-                    </div>
-                </div>
-                <div class="indicators-tools" id="indicatorsBar"></div>
-                <div style="text-align:center; font-size:0.8rem; margin-top:5px;">✨ Clique num indicador para testar ✨</div>
-                <div id="expResultMsg" style="text-align:center; margin-top:12px; font-weight:bold; background:#00000066; border-radius:30px; padding:5px;"></div>
-            </div>
-        </div>
-        <div class="quiz-panel">
-            <div class="question-text" id="questionTxt">Carregando desafio...</div>
-            <div class="options" id="optionsContainer"></div>
-            <div class="feedback" id="feedbackArea">⚡ Clique em uma opção para responder. Depois teste o indicador no experimento!</div>
-            <button class="next-btn" id="nextBtn">▶ PRÓXIMO DESAFIO</button>
-            <div class="medal-area" id="medalArea"></div>
-            <div class="ranking" id="rankingBox">
-                🏆 Melhores resultados (local)<br>
-                <span id="rankList">-</span>
-            </div>
-        </div>
-    </div>
+<header>
+<h1>🧪 LAB pH MASTER ADVANCED</h1>
+<div class="hud">
+<span>⭐ Pontos: <b id="score">0</b></span>
+<span>🏅 Estrelas: <b id="stars">0</b></span>
+<span>🧫 Fase: <b id="phase">1</b></span>
+</div>
+</header>
+
+<div class="game">
+<div class="panel">
+<h2 id="question"></h2>
+<select id="answer"></select>
+<button onclick="checkAnswer()">Responder</button>
+<button onclick="runExperiment()" id="expBtn" disabled>Realizar Experimento</button>
+<p id="feedback"></p>
 </div>
 
-<script src="game.js"></script>
+<div class="lab">
+<div class="beaker">
+<div id="liquid"></div>
+</div>
+</div>
+</div>
+
+<h2>🏆 Ranking Local</h2>
+<ol id="ranking"></ol>
+
+<script src="script.js"></script>
 </body>
 </html>
