@@ -1,92 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚗️ Química Quiz · Ácidos, Bases e Indicadores de pH</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>LabMaster: Academia de pH | Jogo Educativo de Química</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- Botão da música -->
-    <button id="musicBtn" class="music-btn">
-        🎵 Música
-    </button>
-
-    <div class="quiz-container">
-
-        <!-- Barra de pH -->
-        <div class="ph-bar">
-            <div class="ph-segment acid">0-3 <span>Ácido</span></div>
-            <div class="ph-segment acid">4-5 <span>Ác. fraco</span></div>
-            <div class="ph-segment neutral">6-7 <span>Neutro</span></div>
-            <div class="ph-segment alkaline">8-9 <span>Base fraca</span></div>
-            <div class="ph-segment alkaline">10-14 <span>Base</span></div>
-        </div>
-
-        <h1>
-            <span>🧪</span>
-            pH Quiz
-            <span>⚗️</span>
-        </h1>
-
-        <div class="subhead">
-            ácidos • bases • indicadores
-        </div>
-
-        <!-- Card -->
-        <div class="question-card" id="questionCard">
-
-            <div class="question-number" id="questionNumber">
-                Questão 1/10
-            </div>
-
-            <div class="question-text" id="questionText">
-                Carregando...
-            </div>
-
-            <div class="options" id="optionsContainer"></div>
-
-            <div class="feedback" id="feedbackMessage">
-                Selecione uma alternativa.
-            </div>
-
-            <div class="nav-buttons">
-
-                <button class="nav-btn prev-btn" id="prevBtn" disabled>
-                    ← Anterior
-                </button>
-
-                <div class="progress" id="progressIndicator">
-                    1/10
-                </div>
-
-                <button class="nav-btn next-btn" id="nextBtn">
-                    Próxima →
-                </button>
-
+<div class="game-container" id="gameRoot">
+    <div class="lab-header">
+        <div style="font-weight:bold; font-size:1.5rem;">🧪 LABMASTER: pH & INDICADORES</div>
+        <div class="score-area">
+            <span>🔬 Pontos: <span id="pointsDisplay">0</span></span>
+            <div class="stars-area" id="starsDisplay">
+                <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span>
             </div>
         </div>
     </div>
+    <div class="lab-main">
+        <div class="experiment-panel">
+            <div class="bench">
+                <div class="beaker-area">
+                    <div class="tube">
+                        <div class="liquid" id="liquidBeaker">
+                            <div class="liquid-fill" id="liquidFill"></div>
+                        </div>
+                        <div style="margin-top: 8px;">🧪 Solução</div>
+                    </div>
+                </div>
+                <div class="indicators-tools" id="indicatorsBar"></div>
+                <div style="text-align:center; font-size:0.8rem; margin-top:5px;">✨ Clique num indicador para testar ✨</div>
+                <div id="expResultMsg" style="text-align:center; margin-top:12px; font-weight:bold; background:#00000066; border-radius:30px; padding:5px;"></div>
+            </div>
+        </div>
+        <div class="quiz-panel">
+            <div class="question-text" id="questionTxt">Carregando desafio...</div>
+            <div class="options" id="optionsContainer"></div>
+            <div class="feedback" id="feedbackArea">⚡ Clique em uma opção para responder. Depois teste o indicador no experimento!</div>
+            <button class="next-btn" id="nextBtn">▶ PRÓXIMO DESAFIO</button>
+            <div class="medal-area" id="medalArea"></div>
+            <div class="ranking" id="rankingBox">
+                🏆 Melhores resultados (local)<br>
+                <span id="rankList">-</span>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- Música principal -->
-    <audio id="bgMusic" loop>
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Som correto -->
-    <audio id="correctSound">
-        <source src="correct.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Som errado -->
-    <audio id="wrongSound">
-        <source src="wrong.mp3" type="audio/mpeg">
-    </audio>
-
-    <script src="script.js"></script>
-
+<script src="game.js"></script>
 </body>
 </html>
